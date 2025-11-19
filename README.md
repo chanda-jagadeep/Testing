@@ -5,8 +5,11 @@ A polished, automated test suite for a dynamic registration form (HTML / CSS / J
 Project snapshot / assignment brief
 
 <img width="1920" height="847" alt="error-state" src="https://github.com/user-attachments/assets/6f9482e8-e3f7-46e0-afb0-528cb9e07553" />
+Fig:Error State 
 <img width="1920" height="847" alt="flow-c-success" src="https://github.com/user-attachments/assets/ffb323e3-3e25-42ec-9941-bd412da51f15" />
+Fig : flow-c-success
 <img width="1920" height="847" alt="success-state" src="https://github.com/user-attachments/assets/ee469568-a604-440c-98a6-a0182606583c" />
+Fig : success-state
 
 Features:
 Dynamic Country → State → City selection populated from a data object.
