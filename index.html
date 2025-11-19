@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registration System — Demo</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Registration Form — Demo</h1>
+        <p class="lead">Client-side validations, dynamic country/state/city dropdowns, password strength meter, and submit-lock until valid.</p>
+      </div>
+      <div><span class="chip">Frugal Testing — Project</span></div>
+    </div>
+
+    <div class="notice">
+      Tip: The submit button remains disabled until all required fields are valid. Disposable email domains are rejected.
+    </div>
+
+    <form id="regForm" novalidate>
+      <div class="grid">
+        <div class="field">
+          <label for="firstName">First Name *</label>
+          <input id="firstName" name="firstName" type="text" required>
+          <div class="error-msg" id="firstNameError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" name="lastName" type="text" required>
+          <div class="error-msg" id="lastNameError" style="display:none"></div>
+        </div>
+
+        <div class="field full">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required>
+          <div class="small">No disposable emails (e.g., tempmail.com)</div>
+          <div class="error-msg" id="emailError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" name="phone" type="text" placeholder="+91 9876543210" required>
+          <div class="error-msg" id="phoneError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="text" inputmode="numeric" placeholder="Optional">
+        </div>
+
+        <div class="field">
+          <label>Gender *</label>
+          <div class="row">
+            <label><input name="gender" value="Male" type="radio"> Male</label>
+            <label><input name="gender" value="Female" type="radio"> Female</label>
+            <label><input name="gender" value="Other" type="radio"> Other</label>
+          </div>
+          <div class="error-msg" id="genderError" style="display:none"></div>
+        </div>
+
+        <div class="field full">
+          <label for="address">Address</label>
+          <textarea id="address" rows="2" placeholder="Optional"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="country">Country *</label>
+          <select id="country" required>
+            <option value="">-- Select Country --</option>
+          </select>
+          <div class="error-msg" id="countryError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="state">State *</label>
+          <select id="state" required>
+            <option value="">-- Select State --</option>
+          </select>
+          <div class="error-msg" id="stateError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="city">City *</label>
+          <select id="city" required>
+            <option value="">-- Select City --</option>
+          </select>
+          <div class="error-msg" id="cityError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password *</label>
+          <input id="password" name="password" type="password" required>
+          <div class="meter"><i id="meterBar"></i></div>
+          <div class="meter-text">Password strength: <strong id="strength">—</strong></div>
+          <div class="error-msg" id="passwordError" style="display:none"></div>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password *</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" required>
+          <div class="error-msg" id="confirmError" style="display:none"></div>
+        </div>
+
+        <div class="field full">
+          <label><input id="terms" type="checkbox"> I agree to the Terms & Conditions *</label>
+          <div class="error-msg" id="termsError" style="display:none"></div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn" type="button" disabled>Submit</button>
+        <div id="status" class="small"></div>
+      </div>
+
+      <div id="finalMessage" style="margin-top:18px;display:none"></div>
+    </form>
+
+    <hr>
+    <div class="small">Developer Notes: This demo validates required fields, checks disposable email domains, enforces phone starting with +countryCode when country selected, updates state/city on country change, and uses JS-only storage to simulate submission.</div>
+  </div>
+
+  <!-- Link to external JS file -->
+  <script src="script.js"></script>
+</body>
+</html>
